@@ -1,0 +1,2 @@
+class NotAllowedByTypeException(Exception):
+    pass
