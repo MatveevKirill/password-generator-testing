@@ -7,14 +7,6 @@ class MainPage(BasePage):
 
     def generate_passwords(self, params: dict) -> None:
 
-        def _change_state(name: str, state: bool) -> None:
-            is_selected = self.get_selected_from_obj(locator=(self.locators.CHECKBOX_TEMPLATE[0],
-                                                              self.locators.CHECKBOX_TEMPLATE[1].format(name)))
-
-            if state != is_selected:
-                self.click(locator=(self.locators.CHECKBOX_TEMPLATE[0],
-                                    self.locators.CHECKBOX_TEMPLATE[1].format(name)))
-
         # Установить значения чекбоксов.
         for element in ['usenums', 'usecaps', 'uselower', 'usesymbols']:
 
