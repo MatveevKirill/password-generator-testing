@@ -59,7 +59,7 @@ class BasePage(implements(IBasePage)):
 
     def get_selected_from_obj(self, locator: tuple, timeout: float = None):
         def _is_selected():
-            self.find_element(locator=locator, timeout=timeout).is_selected()
+            return self.find_element(locator=locator, timeout=timeout).is_selected()
 
         return wait(
             _method=_is_selected,

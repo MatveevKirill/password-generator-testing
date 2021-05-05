@@ -18,4 +18,3 @@ class BaseTestCase(implements(IBaseTest)):
         self.configuration = request.getfixturevalue('configuration')
 
         self.main_page: MainPage = request.getfixturevalue('main_page')
-

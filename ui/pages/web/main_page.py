@@ -20,10 +20,12 @@ class MainPage(BasePage):
 
             if element in params:
 
-                if params[element]:
-                    _change_state(element, True)
-                else:
-                    _change_state(element, False)
+                is_selected = self.get_selected_from_obj(locator=(self.locators.CHECKBOX_TEMPLATE[0],
+                                                                  self.locators.CHECKBOX_TEMPLATE[1].format(element)))
+
+                if params[element] != is_selected:
+                    self.click(locator=(self.locators.CHECKBOX_TEMPLATE[0],
+                                        self.locators.CHECKBOX_TEMPLATE[1].format(element)))
 
         # Установить длину пароля
         if 'len' not in params:
